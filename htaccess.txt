@@ -5,3 +5,8 @@
 	 RewriteCond %{REQUEST_FILENAME} !-d
 	 RewriteRule ^.*$ /index.php [L]
 </IfModule>
+
+<Files ~ "\.ini$">
+	Order allow,deny
+	Deny from all
+</Files>
