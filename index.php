@@ -13,6 +13,6 @@ if ($path == "admin") { // admin view
 if (array_key_exists($path, $links))
 	header('Location: ' . $links[$path]);
 else
-	header('Location: ' . 'http://mentebinaria.com.br'); // default redirect for inexistent shorten URLs
+	header('Location: ' . 'https://www.mentebinaria.com.br'); // default redirect for inexistent shorten URLs
 
 ?>
