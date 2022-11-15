@@ -4,13 +4,13 @@ A quick n' dirty URL shortener used by https://menteb.in.
 
 No, there are no nice features here. It's just a URL shortener that requires you to manually edit a `links.ini` file.
 
-Heavily based on by [Martin Angelov's code](http://tutorialzine.com/2013/12/quick-tip-create-a-simple-url-shortener-with-10-lines-of-php/).
+Heavily based on [Martin Angelov's code](http://tutorialzine.com/2013/12/quick-tip-create-a-simple-url-shortener-with-10-lines-of-php/).
 
 ## Installation
 
 ### Apache httpd 2.4 on Debian/Ubuntu
 
-Install Apache httpd and PHP
+Install Apache httpd and PHP:
 
     apt install libapache2-mod-php
 
@@ -51,7 +51,7 @@ Rename [links.ini.sample](links.ini.sample) to `links.ini`:
     cd /var/www/vise
     mv links.ini.sample links.ini
 
-Restart httpd
+Restart httpd:
 
     systemctl restart apache2
 
