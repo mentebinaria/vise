@@ -18,21 +18,14 @@
  * this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-$path = trim($_SERVER['REQUEST_URI'], "/");
-$ini = parse_ini_file('links.ini', true);
+session_start();
 
-if ($ini == false) {
-	die("Could not open .ini");
-}
+if ($_SESSION["auth"] == false)
+  header("location:/admin/");
 
-if (array_key_exists($path, $ini)) {
-	// INI section support
-	if (is_array($ini[$path])) {
-		header('Location: ' . $ini[$path]["destination"]);
-	} else {
-		header('Location: ' . $ini[$path]);
-	}
-} else {
-	header('Location: https://www.mentebinaria.com.br'); // default redirect
-}
+$with = '';
+$contents = file_get_contents("tpl/add.tpl");
+//$contents = str_replace("_REPLACE_", $with, $contents);
+echo $contents;
+
 ?>
