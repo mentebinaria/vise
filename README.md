@@ -1,10 +1,6 @@
 # vise
 
-A quick n' dirty URL shortener used by https://menteb.in.
-
-No, there are no nice features here. It's just a URL shortener that requires you to manually edit a `links.ini` file.
-
-Heavily based on [Martin Angelov's code](http://tutorialzine.com/2013/12/quick-tip-create-a-simple-url-shortener-with-10-lines-of-php/).
+A quick n' dirty URL shortener based on [Martin Angelov's code](http://tutorialzine.com/2013/12/quick-tip-create-a-simple-url-shortener-with-10-lines-of-php/).
 
 ## Installation
 
@@ -22,7 +18,9 @@ Enable `mod_rewrite`:
 
     a2enmod rewrite
 
-Create a virtual host configuration file for your new website. For example, consider a `/etc/apache2/sites-available/vise.conf` file with the following content:
+Create a virtual host configuration file for your new website. For example,
+consider a `/etc/apache2/sites-available/vise.conf` file with the following
+content:
 
 ```apache
 <VirtualHost *:80>
@@ -55,10 +53,16 @@ Restart httpd:
 
     systemctl restart apache2
 
-### Other OSes
+## Configuration
 
-Other operating systems and Linux flavors combination should work. If you have instructions for them, please submit a PR.
+Edit the `admin/login.php` file and set an access code in the following line:
+
+```php
+define("ACCESS_CODE", "CHANGEME");
+```
 
 ## Usage
 
-Just add entries to `links.ini` file, one per line. You don't need to restart the webserver for new entries to take effect.
+When the app is running, navigate to `/admin` to start creating shortened links.
+To modify an existing link, just recreate it. To delete a shortened link
+permanently, manually remove it from `links.ini` (sorry).
